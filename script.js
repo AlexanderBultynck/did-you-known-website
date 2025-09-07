@@ -13,7 +13,7 @@ async function fetchFact() {
 }
 
 // Load an initial fact
-fetchFact();
+fetchFact().then(() => {} );
 
 // Load a new fact when the button is clicked
 newFactButton.addEventListener('click', fetchFact);
