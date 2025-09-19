@@ -1,29 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="A fast, accessible feed of fun facts. Press Space for a new fact, C to copy, S to share." />
+    <meta name="theme-color" content="#0f172a" />
     <title>Did You Know? - Endless Facts</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
 
-<header>
-    <h1>Did You Know?</h1>
-    <p>Endless fascinating facts to keep you amazed!</p>
-</header>
+    <a class="skip-link" href="#new-fact-button">Skip to controls</a>
 
-<main>
-    <section id="fact-container">
-        <div id="fact" aria-live="polite"></div>
-        <button id="new-fact-button">Show Me Another Fact!</button>
-    </section>
-</main>
+    <header>
+        <div class="header-inner">
+            <h1>Did You Know?</h1>
+            <p class="tagline">Short, surprising facts.</p>
+        </div>
+        <p class="kbd-hint">Keyboard: <kbd>Space</kbd> for new fact • <kbd>C</kbd> copy • <kbd>S</kbd> share</p>
+    </header>
 
-<footer>
-    <p>&copy; 2025 Did You Know? All rights reserved.</p>
-</footer>
+    <main>
+        <section id="fact-container" aria-labelledby="fact-heading">
+            <h2 id="fact-heading" class="visually-hidden">Fact</h2>
+            <div id="fact" class="fact-text" aria-live="polite" aria-atomic="true"></div>
 
-<script src="script.js"></script>
+            <div class="controls">
+                <button id="new-fact-button" class="btn primary" aria-label="Show another fact">Show Me Another
+                    Fact</button>
+                <button id="copy-button" class="btn" aria-label="Copy fact to clipboard">Copy</button>
+                <button id="share-button" class="btn" aria-label="Share this fact">Share</button>
+                <div id="loading-spinner" class="spinner" role="status" aria-hidden="true" aria-label="Loading"></div>
+            </div>
+
+            <p id="status-message" class="muted" aria-live="polite"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Did You Know?</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
