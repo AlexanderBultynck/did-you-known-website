@@ -9,6 +9,11 @@
     <meta name="theme-color" content="#0f172a" />
     <title>Did You Know? - Endless Facts</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://uselessfacts.jsph.pl" crossorigin>
+    <meta property="og:title" content="Did You Know? - Endless Facts">
+    <meta property="og:description" content="A fast, accessible feed of fun facts. Press Space for a new fact, C to copy, S to share.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
     <link rel="stylesheet" href="styles.css" />
 </head>
 
@@ -27,7 +32,7 @@
     <main>
         <section id="fact-container" aria-labelledby="fact-heading">
             <h2 id="fact-heading" class="visually-hidden">Fact</h2>
-            <div id="fact" class="fact-text" aria-live="polite" aria-atomic="true"></div>
+            <div id="fact" class="fact-text" tabindex="0" role="region" aria-live="polite" aria-atomic="true" aria-label="Fact content"></div>
 
             <div class="controls">
                 <button id="new-fact-button" class="btn primary" aria-label="Show another fact">Show Me Another
@@ -38,6 +43,7 @@
             </div>
 
             <p id="status-message" class="muted" aria-live="polite"></p>
+            <noscript><p class="muted">JavaScript is required to load facts. Please enable JavaScript.</p></noscript>
         </section>
     </main>
 

@@ -113,6 +113,13 @@ main {
     animation: fact-reveal 420ms cubic-bezier(.2, .9, .3, 1) both;
 }
 
+/* visible focus state for the fact when announced to assistive tech */
+.fact-text:focus {
+    box-shadow: 0 8px 20px rgba(2,6,23,0.25);
+    outline: 4px solid rgba(96,165,250,0.12);
+    border-radius: 8px;
+}
+
 @keyframes fact-reveal {
     from {
         opacity: 0;
